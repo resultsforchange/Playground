@@ -1,0 +1,78 @@
+﻿@model Playground.Models.Structure
+
+@{
+    ViewBag.Title = "Organisational structure";
+    Layout = "~/Views/Shared/_WizardLayout.cshtml";
+}
+
+<section id="content">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-24 col-md-12 grants">
+                <!-- page content begins here -->
+                @using (Html.BeginForm("StructureData", "OrgData", FormMethod.Post))
+                {
+                    <h2>@ViewBag.Title</h2>
+
+                        @Html.LabelFor(m => m.IsWomensRightsOrganisation)<br />
+                        @Html.CheckBoxFor(m => m.IsWomensRightsOrganisation)
+                        @Html.ValidationMessageFor(m => m.IsWomensRightsOrganisation)<br />
+
+                        @Html.LabelFor(m => m.WomensRightsPhiliosophy)<br />
+                        @Html.TextBoxFor(m => m.WomensRightsPhiliosophy)
+                        @Html.ValidationMessageFor(m => m.WomensRightsPhiliosophy)<br />
+
+                        @Html.LabelFor(m => m.WomensRoleInDecisionMaking)<br />
+                        @Html.TextBoxFor(m => m.WomensRoleInDecisionMaking)
+                        @Html.ValidationMessageFor(m => m.WomensRoleInDecisionMaking)<br />
+
+                        @Html.LabelFor(m => m.HowAreKeyDecisionsMade)<br />
+                        @Html.TextBoxFor(m => m.HowAreKeyDecisionsMade)
+                        @Html.ValidationMessageFor(m => m.HowAreKeyDecisionsMade)<br />
+
+                        @Html.LabelFor(m => m.WomensRoleOnBoard)<br />
+                        @Html.TextBoxFor(m => m.WomensRoleOnBoard)
+                        @Html.ValidationMessageFor(m => m.WomensRoleOnBoard)<br />
+
+                        @Html.LabelFor(m => m.PaidStaffId)<br />
+                        @Html.TextBoxFor(m => m.PaidStaffId)
+                        @Html.ValidationMessageFor(m => m.PaidStaffId)<br />
+
+                        @Html.LabelFor(m => m.UnpaidStaffId)<br />
+                        @Html.TextBoxFor(m => m.UnpaidStaffId)
+                        @Html.ValidationMessageFor(m => m.UnpaidStaffId)<br />
+
+                        @Html.LabelFor(m => m.BoardId)<br />
+                        @Html.TextBoxFor(m => m.BoardId)
+                        @Html.ValidationMessageFor(m => m.BoardId)<br />
+
+                        @Html.LabelFor(m => m.AdvisorId)<br />
+                        @Html.TextBoxFor(m => m.AdvisorId)
+                        @Html.ValidationMessageFor(m => m.AdvisorId)<br />
+
+                        @Html.LabelFor(m => m.VolunteerId)<br />
+                        @Html.TextBoxFor(m => m.VolunteerId)
+                        @Html.ValidationMessageFor(m => m.VolunteerId)<br />
+
+                        @Html.LabelFor(m => m.MemberId)<br />
+                        @Html.TextBoxFor(m => m.MemberId)
+                        @Html.ValidationMessageFor(m => m.MemberId)<br />
+
+                        @*@Html.LabelFor(m => m.RegistrationCertificate)<br />
+                        @Html.TextBoxFor(m => m.RegistrationCertificate)
+                        @Html.ValidationMessageFor(m => m.RegistrationCertificate)<br />
+
+                        @Html.LabelFor(m => m.ReferenceLetter)<br />
+                        @Html.TextBoxFor(m => m.ReferenceLetter)
+                        @Html.ValidationMessageFor(m => m.ReferenceLetter)<br />*@
+
+                        <br />
+                        <hr />
+                        <input type="submit" name="prevBtn" value='Previous' />
+                        <input type="submit" name="nextBtn" value='Finish' />
+                }
+                <!-- page content ends here -->
+            </div>
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+</section>

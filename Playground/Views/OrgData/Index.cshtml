@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "Capture organisation data";
+    Layout = "~/Views/Shared/_WizardLayout.cshtml";
+}
+
+<section id="content">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-24 col-md-12 grants">
+                <!-- page content begins here -->
+                <h1>@ViewBag.Title</h1>
+                <hr />
+
+                <p>
+                    We need to gather some information about your organisation. This information
+                    will be used in order for us to communicate with you and understand your
+                    organisation's mission, structure and purpose.
+                </p>
+                <p>
+                    We have created a wizard that will step you through the process of capturing
+                    all the relevant data that we need. Please fill in all the fields within each
+                    of the steps.
+                </p>
+                <p>
+                    Click next to proceed...
+                </p>
+                <p>
+                    <input type="submit" name="nextBtn" value='Next' />
+                </p>
+
+                <!-- page content ends here -->
+            </div>
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+</section>

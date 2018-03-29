@@ -1,0 +1,43 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @RenderSection("headContent", required: false)
+
+    <!-- Custom styles for this template -->
+    <link href="custom.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="blog-header">
+            <h1 class="blog-title">The Data Capture Wizard</h1>
+            <p class="lead blog-description">The official example template of creating a wizard with Bootstrap.</p>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                @RenderBody()
+            </div><!-- /.blog-main -->
+        </div><!-- /.row -->
+
+        <div class="row">
+            <footer class="blog-footer">
+                <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            </footer>
+        </div><!-- /.row -->
+
+        </div><!-- /.container -->
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

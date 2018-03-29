@@ -1,0 +1,57 @@
+﻿@using WizardWebTester.Helpers
+
+@model WizardWebTester.Models.WizardModelBase
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section headContent{
+    <link rel="stylesheet" href="~/Content/Wizard.css" />
+    <script src="/Scripts/MVCWizard.js"></script>
+}
+@using (Html.BeginForm())
+{
+    @*@Html.HiddenFor(a => a.ShowWizardSteps);
+    @Html.HiddenFor(a => a.CurrentStepIndex);
+    @Html.ValidationSummary(true)
+
+    <div class="WizardOuter">
+        <div class="row">
+            @if (Model.ShowWizardSteps)
+            {
+                <div class="col-sm-3 col-sm-offset-1  blog-sidebar">
+                    <div class="sidebar-module">
+                        <h3>Wizard</h3>
+                        <ol class="list-unstyled">
+                            <li><a href="#">Welcome</a></li>
+                            <li><a href="#">Org data</a></li>
+                            <li><a href="#">Admin data</a></li>
+                            <li><a href="#">Struct data</a></li>
+                        </ol>
+                    </div>
+                </div>
+                <!-- /.blog-sidebar -->
+            }*@
+            <section class="pull-right col-sm-8">
+                @RenderBody()
+
+                @*<section class="WizardButtons">
+            @if (Model.ShowBackButton)
+            { @Html.WizardBackButton(Model.PreviousWizardStep.Action, Model.PreviousWizardStep.Controller);
+            }
+            @if (Model.ShowNextButton)
+            { @Html.WizardNextButton(Model.NextWizardStep.Action, Model.NextWizardStep.Controller);
+            }
+            @if (Model.AllowFinish)
+            { @Html.WizardFinishButton(Model.FinishAction.Action, Model.FinishAction.Controller);
+            }
+
+    </section>*@
+            </section>
+        @*</div>
+    </div>*@
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

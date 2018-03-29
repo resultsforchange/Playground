@@ -1,0 +1,51 @@
+﻿@model WizardWebTester.Models.OrganisationData
+
+@{
+    ViewBag.Title = "OrganisationData";
+    //Layout = "~/Views/Shared/_WizardLayout.cshtml";
+}
+
+@using (Html.BeginForm("OrganisationData", "Home", FormMethod.Post))
+{
+    <h2>@ViewBag.Title</h2>
+
+    @Html.LabelFor(m => m.Vision)<br/>
+    @Html.TextBoxFor(m => m.Vision)
+    @Html.ValidationMessageFor(m => m.Vision)<br/>
+
+    @Html.LabelFor(m => m.Mission)<br/>
+    @Html.TextBoxFor(m => m.Mission)
+    @Html.ValidationMessageFor(m => m.Mission)<br/>
+
+    @Html.LabelFor(m => m.WomensRightsIssuesId)<br/>
+    @Html.TextBoxFor(m => m.WomensRightsIssuesId)
+    @Html.ValidationMessageFor(m => m.WomensRightsIssuesId)<br/>
+
+    @Html.LabelFor(m => m.YearFormed)<br/>
+    @Html.TextBoxFor(m => m.YearFormed)
+    @Html.ValidationMessageFor(m => m.YearFormed)<br/>
+
+    @Html.LabelFor(m => m.Founder)<br/>
+    @Html.TextBoxFor(m => m.Founder)
+    @Html.ValidationMessageFor(m => m.Founder)<br/>
+
+    @Html.LabelFor(m => m.ReasonFormed)<br/>
+    @Html.TextBoxFor(m => m.ReasonFormed)
+    @Html.ValidationMessageFor(m => m.ReasonFormed)<br/>
+
+    @Html.LabelFor(m => m.OperationalAreaId)<br/>
+    @Html.TextBoxFor(m => m.OperationalAreaId)
+    @Html.ValidationMessageFor(m => m.OperationalAreaId)<br/>
+
+    @Html.LabelFor(m => m.OperationalLocationId)<br/>
+    @Html.TextBoxFor(m => m.OperationalLocationId)
+    @Html.ValidationMessageFor(m => m.OperationalLocationId)<br/>
+
+    @Html.LabelFor(m => m.Achievements)<br/>
+    @Html.TextBoxFor(m => m.Achievements)
+    @Html.ValidationMessageFor(m => m.Achievements)<br/>
+
+    <br/>
+    <hr/>
+    <input type="submit" name="nextBtn" value='Next'/>
+}

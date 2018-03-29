@@ -1,0 +1,26 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section headContent{
+    <link rel="stylesheet" href="/Content/Wizard.css." />
+    <script src="/Scripts/MVCWizard.js"></script>
+}
+
+<div class="WizardOuter">
+    <nav class="pull-left WizardSidebar btn_box_shadow">
+        <ul>
+            <li>@Html.ActionLink("Organisation Data", "OrganisationData", "OrgData")</li>
+            <li>@Html.ActionLink("Administration Data", "AdministrationData", "OrgData")</li>
+            <li>@Html.ActionLink("Structure Data", "StructureData", "OrgData")</li>
+        </ul>
+    </nav>
+    <section class="WizardForm pull-right">
+        @RenderBody()
+    </section>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

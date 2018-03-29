@@ -1,0 +1,120 @@
+﻿@model WizardWebTester.Models.AdministrationData
+
+@{
+    ViewBag.Title = "AdministrationData";
+    //Layout = "~/Views/Shared/_WizardLayout.cshtml";
+}
+
+@using (Html.BeginForm("AdministrationData", "Home", FormMethod.Post))
+{
+    <h2>@ViewBag.Title</h2>
+
+    @Html.LabelFor(m => m.Name)<br/>
+    @Html.TextBoxFor(m => m.Name)
+    @Html.ValidationMessageFor(m => m.Name)<br/>
+
+    @Html.LabelFor(m => m.PhysicalAddressLine1)<br/>
+    @Html.TextBoxFor(m => m.PhysicalAddressLine1)
+    @Html.ValidationMessageFor(m => m.PhysicalAddressLine1)<br/>
+
+    @Html.LabelFor(m => m.PhysicalAddressLine2)<br/>
+    @Html.TextBoxFor(m => m.PhysicalAddressLine2)
+    @Html.ValidationMessageFor(m => m.PhysicalAddressLine2)<br/>
+
+    @Html.LabelFor(m => m.PhysicalCity)<br/>
+    @Html.TextBoxFor(m => m.PhysicalCity)
+    @Html.ValidationMessageFor(m => m.PhysicalCity)<br/>
+
+    @Html.LabelFor(m => m.PhysicalCountry)<br/>
+    @Html.TextBoxFor(m => m.PhysicalCountry)
+    @Html.ValidationMessageFor(m => m.PhysicalCountry)<br/>
+
+    @Html.LabelFor(m => m.PhysicalCode)<br/>
+    @Html.TextBoxFor(m => m.PhysicalCode)
+    @Html.ValidationMessageFor(m => m.PhysicalCode)<br/>
+
+    @Html.LabelFor(m => m.PostalAddressLine1)<br/>
+    @Html.TextBoxFor(m => m.PostalAddressLine1)
+    @Html.ValidationMessageFor(m => m.PostalAddressLine1)<br/>
+
+    @Html.LabelFor(m => m.PostalAddressLine2)<br/>
+    @Html.TextBoxFor(m => m.PostalAddressLine2)
+    @Html.ValidationMessageFor(m => m.PostalAddressLine2)<br/>
+
+    @Html.LabelFor(m => m.PostalCity)<br/>
+    @Html.TextBoxFor(m => m.PostalCity)
+    @Html.ValidationMessageFor(m => m.PostalCity)<br/>
+
+    @Html.LabelFor(m => m.PostalCountry)<br/>
+    @Html.TextBoxFor(m => m.PostalCountry)
+    @Html.ValidationMessageFor(m => m.PostalCountry)<br/>
+
+    @Html.LabelFor(m => m.PostalCode)<br/>
+    @Html.TextBoxFor(m => m.PostalCode)
+    @Html.ValidationMessageFor(m => m.PostalCode)<br/>
+
+    @Html.LabelFor(m => m.TelephoneNumber)<br/>
+    @Html.TextBoxFor(m => m.TelephoneNumber)
+    @Html.ValidationMessageFor(m => m.TelephoneNumber)<br/>
+
+    @Html.LabelFor(m => m.MobileNumber)<br/>
+    @Html.TextBoxFor(m => m.MobileNumber)
+    @Html.ValidationMessageFor(m => m.MobileNumber)<br/>
+
+    @Html.LabelFor(m => m.EmailAddress)<br/>
+    @Html.TextBoxFor(m => m.EmailAddress)
+    @Html.ValidationMessageFor(m => m.EmailAddress)<br/>
+
+    @Html.LabelFor(m => m.WebsiteUrl)<br/>
+    @Html.TextBoxFor(m => m.WebsiteUrl)
+    @Html.ValidationMessageFor(m => m.WebsiteUrl)<br/>
+
+    @Html.LabelFor(m => m.SkypeAddress)<br/>
+    @Html.TextBoxFor(m => m.SkypeAddress)
+    @Html.ValidationMessageFor(m => m.SkypeAddress)<br/>
+
+    @Html.LabelFor(m => m.TwitterAccount)<br/>
+    @Html.TextBoxFor(m => m.TwitterAccount)
+    @Html.ValidationMessageFor(m => m.TwitterAccount)<br/>
+
+    @Html.LabelFor(m => m.FacebookAccount)<br/>
+    @Html.TextBoxFor(m => m.FacebookAccount)
+    @Html.ValidationMessageFor(m => m.FacebookAccount)<br/>
+
+    @Html.LabelFor(m => m.ContactName)<br/>
+    @Html.TextBoxFor(m => m.ContactName)
+    @Html.ValidationMessageFor(m => m.ContactName)<br/>
+
+    @Html.LabelFor(m => m.ContactPosition)<br/>
+    @Html.TextBoxFor(m => m.ContactPosition)
+    @Html.ValidationMessageFor(m => m.ContactPosition)<br/>
+
+    @Html.LabelFor(m => m.ContactTelephoneNumber)<br/>
+    @Html.TextBoxFor(m => m.ContactTelephoneNumber)
+    @Html.ValidationMessageFor(m => m.ContactTelephoneNumber)<br/>
+
+    @Html.LabelFor(m => m.ContactEmailAddress)<br/>
+    @Html.TextBoxFor(m => m.ContactEmailAddress)
+    @Html.ValidationMessageFor(m => m.ContactEmailAddress)<br/>
+
+    @Html.LabelFor(m => m.ContactSkypeAddress)<br/>
+    @Html.TextBoxFor(m => m.ContactSkypeAddress)
+    @Html.ValidationMessageFor(m => m.ContactSkypeAddress)<br/>
+
+    @Html.LabelFor(m => m.LearntAboutId)<br/>
+    @Html.TextBoxFor(m => m.LearntAboutId)
+    @Html.ValidationMessageFor(m => m.LearntAboutId)<br/>
+
+    @Html.LabelFor(m => m.ReceivedPreviousGrant)<br/>
+    @Html.CheckBoxFor(m => m.ReceivedPreviousGrant)
+    @Html.ValidationMessageFor(m => m.ReceivedPreviousGrant)<br/>
+
+    @Html.LabelFor(m => m.PreviousGrantInformationId)<br/>
+    @Html.TextBoxFor(m => m.PreviousGrantInformationId)
+    @Html.ValidationMessageFor(m => m.PreviousGrantInformationId)<br/>
+
+    <br/>
+    <hr/>
+    <input type="submit" name="prevBtn" value='Previous'/>
+    <input type="submit" name="nextBtn" value='Next'/>
+}
