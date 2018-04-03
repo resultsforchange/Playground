@@ -232,6 +232,10 @@
     <Compile Include="Migrations\201804031227266_AddLearntAboutTable.Designer.cs">
       <DependentUpon>201804031227266_AddLearntAboutTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804031253134_AddedAdditionalStructureColumns.cs" />
+    <Compile Include="Migrations\201804031253134_AddedAdditionalStructureColumns.Designer.cs">
+      <DependentUpon>201804031253134_AddedAdditionalStructureColumns.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Administration.cs" />
@@ -377,6 +381,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804031227266_AddLearntAboutTable.resx">
       <DependentUpon>201804031227266_AddLearntAboutTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804031253134_AddedAdditionalStructureColumns.resx">
+      <DependentUpon>201804031253134_AddedAdditionalStructureColumns.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

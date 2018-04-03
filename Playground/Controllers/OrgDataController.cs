@@ -174,12 +174,31 @@ namespace Playground.Controllers
                     obj.StructData.WomensRoleInDecisionMaking = data.WomensRoleInDecisionMaking;
                     obj.StructData.HowAreKeyDecisionsMade = data.HowAreKeyDecisionsMade;
                     obj.StructData.WomensRoleOnBoard = data.WomensRoleOnBoard;
-                    obj.StructData.PaidStaffId = data.PaidStaffId;
-                    obj.StructData.UnpaidStaffId = data.UnpaidStaffId;
-                    obj.StructData.BoardId = data.BoardId;
-                    obj.StructData.AdvisorId = data.AdvisorId;
-                    obj.StructData.VolunteerId = data.VolunteerId;
-                    obj.StructData.MemberId = data.MemberId;
+                    obj.StructData.PaidStaffTotal = data.PaidStaffTotal;
+                    obj.StructData.PaidStaffFemales= data.PaidStaffFemales;
+                    obj.StructData.PaidStaffMales = data.PaidStaffMales;
+                    obj.StructData.PaidStaffTransNonConforming = data.PaidStaffTransNonConforming;
+                    obj.StructData.UnpaidStaffTotal = data.UnpaidStaffTotal;
+                    obj.StructData.UnpaidStaffFemales = data.UnpaidStaffFemales;
+                    obj.StructData.UnpaidStaffMales = data.UnpaidStaffMales;
+                    obj.StructData.UnpaidStaffTransNonConforming = data.UnpaidStaffTransNonConforming;
+                    obj.StructData.BoardMembersTotal = data.BoardMembersTotal;
+                    obj.StructData.BoardMembersFemales = data.BoardMembersFemales;
+                    obj.StructData.BoardMembersMales = data.BoardMembersMales;
+                    obj.StructData.BoardMembersTransNonConforming = data.BoardMembersTransNonConforming;
+                    obj.StructData.AdvisorsTotal = data.AdvisorsTotal;
+                    obj.StructData.AdvisorsFemales = data.AdvisorsFemales;
+                    obj.StructData.AdvisorsMales = data.AdvisorsMales;
+                    obj.StructData.AdvisorsTransNonConforming = data.AdvisorsTransNonConforming;
+                    obj.StructData.VolunteersTotal = data.VolunteersTotal;
+                    obj.StructData.VolunteersFemales = data.VolunteersFemales;
+                    obj.StructData.VolunteersMales = data.VolunteersMales;
+                    obj.StructData.VolunteersTransNonConforming = data.VolunteersTransNonConforming;
+                    obj.StructData.MembersTotal = data.MembersTotal;
+                    obj.StructData.MembersFemales = data.MembersFemales;
+                    obj.StructData.MembersMales = data.MembersMales;
+                    obj.StructData.MembersTransNonConforming = data.MembersTransNonConforming;
+
                     //obj.StructData.RegistrationCertificate = Convert.FromBase64String(data.RegistrationCertificate.ToString());
                     //obj.StructData.ReferenceLetter = Convert.FromBase64String(data.ReferenceLetter.ToString());
 

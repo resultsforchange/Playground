@@ -32,29 +32,77 @@ namespace Playground.Models
         [Display(Name = "What are women's role on your board?")]
         public string WomensRoleOnBoard { get; set; }
 
-        [Required]
-        [Display(Name = "Paid staff information")]
-        public int PaidStaffId { get; set; }
+        [Display(Name = "Paid staff total")]
+        public int PaidStaffTotal { get; set; }
 
-        [Required]
-        [Display(Name = "Unpaid staff information")]
-        public int UnpaidStaffId { get; set; }
+        [Display(Name = "Paid staff No. Women/Girls")]
+        public int PaidStaffFemales { get; set; }
 
-        [Required]
-        [Display(Name = "Board information")]
-        public int BoardId { get; set; }
+        [Display(Name = "Paid staff No. Men/Boys")]
+        public int PaidStaffMales { get; set; }
 
-        [Required]
-        [Display(Name = "Advisors information")]
-        public int AdvisorId { get; set; }
+        [Display(Name = "Paid staff No. Transgnder/Gender non-conforming")]
+        public int PaidStaffTransNonConforming { get; set; }
 
-        [Required]
-        [Display(Name = "Volunteer information")]
-        public int VolunteerId { get; set; }
+        [Display(Name = "Unpaid staff total")]
+        public int UnpaidStaffTotal { get; set; }
 
-        [Required]
-        [Display(Name = "Member information")]
-        public int MemberId { get; set; }
+        [Display(Name = "Unpaid staff No. Women/Girls")]
+        public int UnpaidStaffFemales { get; set; }
+
+        [Display(Name = "Unpaid staff No. Men/Boys")]
+        public int UnpaidStaffMales { get; set; }
+
+        [Display(Name = "Unpaid staff No. Transgnder/Gender non-conforming")]
+        public int UnpaidStaffTransNonConforming { get; set; }
+
+        [Display(Name = "Board members total")]
+        public int BoardMembersTotal { get; set; }
+
+        [Display(Name = "Board members No. Women/Girls")]
+        public int BoardMembersFemales { get; set; }
+
+        [Display(Name = "Board members No. Men/Boys")]
+        public int BoardMembersMales { get; set; }
+
+        [Display(Name = "Board members No. Transgnder/Gender non-conforming")]
+        public int BoardMembersTransNonConforming { get; set; }
+
+        [Display(Name = "Advisors total")]
+        public int AdvisorsTotal { get; set; }
+
+        [Display(Name = "Advisors No. Women/Girls")]
+        public int AdvisorsFemales { get; set; }
+
+        [Display(Name = "Advisors No. Men/Boys")]
+        public int AdvisorsMales { get; set; }
+
+        [Display(Name = "Advisors No. Transgnder/Gender non-conforming")]
+        public int AdvisorsTransNonConforming { get; set; }
+
+        [Display(Name = "Volunteers total")]
+        public int VolunteersTotal { get; set; }
+
+        [Display(Name = "Volunteers No. Women/Girls")]
+        public int VolunteersFemales { get; set; }
+
+        [Display(Name = "Volunteers No. Men/Boys")]
+        public int VolunteersMales { get; set; }
+
+        [Display(Name = "Volunteers No. Transgnder/Gender non-conforming")]
+        public int VolunteersTransNonConforming { get; set; }
+
+        [Display(Name = "Members total")]
+        public int MembersTotal { get; set; }
+
+        [Display(Name = "Members No. Women/Girls")]
+        public int MembersFemales { get; set; }
+
+        [Display(Name = "Members No. Men/Boys")]
+        public int MembersMales { get; set; }
+
+        [Display(Name = "Members No. Transgnder/Gender non-conforming")]
+        public int MembersTransNonConforming { get; set; }
 
         //[Required]
         [Display(Name = "Please upload your organisation's reqistration certificate")]
