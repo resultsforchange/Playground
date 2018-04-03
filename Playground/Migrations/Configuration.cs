@@ -98,6 +98,20 @@ namespace Playground.Migrations
                 new OperationalArea() { Description = "Western Africa", InsertedBy = "Administrator", InsertedDateTime = DateTime.Now, ModifiedBy = "Administrator", ModifiedDateTime = DateTime.Now },
                 new OperationalArea() { Description = "Southern Africa", InsertedBy = "Administrator", InsertedDateTime = DateTime.Now, ModifiedBy = "Administrator", ModifiedDateTime = DateTime.Now }
             );
+
+            context.LearntAbout.AddOrUpdate(
+                new LearntAbout() { Description = "Internet", InsertedBy = "Administrator", InsertedDateTime = DateTime.Now, ModifiedBy = "Administrator", ModifiedDateTime = DateTime.Now },
+                new LearntAbout() { Description = "AWDF website", InsertedBy = "Administrator", InsertedDateTime = DateTime.Now, ModifiedBy = "Administrator", ModifiedDateTime = DateTime.Now },
+                new LearntAbout() { Description = "AWDF grantee", InsertedBy = "Administrator", InsertedDateTime = DateTime.Now, ModifiedBy = "Administrator", ModifiedDateTime = DateTime.Now },
+                new LearntAbout() { Description = "AWDF partner", InsertedBy = "Administrator", InsertedDateTime = DateTime.Now, ModifiedBy = "Administrator", ModifiedDateTime = DateTime.Now },
+                new LearntAbout() { Description = "AWDF staff member", InsertedBy = "Administrator", InsertedDateTime = DateTime.Now, ModifiedBy = "Administrator", ModifiedDateTime = DateTime.Now },
+                new LearntAbout() { Description = "AWDF board member or advisor", InsertedBy = "Administrator", InsertedDateTime = DateTime.Now, ModifiedBy = "Administrator", ModifiedDateTime = DateTime.Now },
+                new LearntAbout() { Description = "Another civil society organisation", InsertedBy = "Administrator", InsertedDateTime = DateTime.Now, ModifiedBy = "Administrator", ModifiedDateTime = DateTime.Now },
+                new LearntAbout() { Description = "Donor", InsertedBy = "Administrator", InsertedDateTime = DateTime.Now, ModifiedBy = "Administrator", ModifiedDateTime = DateTime.Now },
+                new LearntAbout() { Description = "Email announcement", InsertedBy = "Administrator", InsertedDateTime = DateTime.Now, ModifiedBy = "Administrator", ModifiedDateTime = DateTime.Now },
+                new LearntAbout() { Description = "Via call for applications", InsertedBy = "Administrator", InsertedDateTime = DateTime.Now, ModifiedBy = "Administrator", ModifiedDateTime = DateTime.Now },
+                new LearntAbout() { Description = "Other (please specify)", InsertedBy = "Administrator", InsertedDateTime = DateTime.Now, ModifiedBy = "Administrator", ModifiedDateTime = DateTime.Now }
+            );
         }
     }
 }

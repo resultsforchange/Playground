@@ -49,12 +49,15 @@ namespace Playground.Data
 
             modelBuilder.Entity<OperationalArea>();
 
+            modelBuilder.Entity<LearntAbout>();
+
             base.OnModelCreating(modelBuilder);
         }
 
         public virtual DbSet<Country> Country { get; set; }
         public virtual DbSet<WomensRightsIssue> WomensRightsIssue { get; set; }
         public virtual DbSet<OperationalArea> OperationalArea { get; set; }
+        public virtual DbSet<LearntAbout> LearntAbout { get; set; }
         public virtual DbSet<Organisation> Organisation { get; set; }
         public virtual DbSet<Administration> Administration { get; set; }
         public virtual DbSet<Structure> Structure { get; set; }

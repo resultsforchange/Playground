@@ -11,6 +11,7 @@ namespace Playground.Models
         {
             Administration = new HashSet<Administration>();
             Structure = new HashSet<Structure>();
+            OperationalArea = new HashSet<OperationalArea>();
         }
 
         [Required]
@@ -54,5 +55,6 @@ namespace Playground.Models
 
         public virtual ICollection<Administration> Administration { get; set; }
         public virtual ICollection<Structure> Structure { get; set; }   
+        public virtual ICollection<OperationalArea> OperationalArea { get; set; }
     }
 }

@@ -188,15 +188,24 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CountryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LearntAboutController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\OperationalAreaController.cs" />
     <Compile Include="Controllers\OrgDataController.cs" />
     <Compile Include="Controllers\WomensRightsIssueController.cs" />
     <Compile Include="Data\EFContext.cs" />
     <Compile Include="Data\GenericUnitOfWork.cs" />
+    <Compile Include="Experiment\Administration.cs" />
+    <Compile Include="Experiment\Country.cs" />
     <Compile Include="Experiment\OneToOne.cs" />
+    <Compile Include="Experiment\OperationalArea.cs" />
+    <Compile Include="Experiment\OperationalLocation.cs" />
+    <Compile Include="Experiment\Organisation.cs" />
+    <Compile Include="Experiment\OrgDataWithLookups.cs" />
     <Compile Include="Experiment\PassportDetails.cs" />
     <Compile Include="Experiment\Person.cs" />
+    <Compile Include="Experiment\Structure.cs" />
+    <Compile Include="Experiment\WomensRightsIssue.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -219,6 +228,10 @@
     <Compile Include="Migrations\201804031018531_AddedOperationalAreaTable.Designer.cs">
       <DependentUpon>201804031018531_AddedOperationalAreaTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804031227266_AddLearntAboutTable.cs" />
+    <Compile Include="Migrations\201804031227266_AddLearntAboutTable.Designer.cs">
+      <DependentUpon>201804031227266_AddLearntAboutTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Administration.cs" />
@@ -226,6 +239,7 @@
     <Compile Include="Models\Country.cs" />
     <Compile Include="Models\Entity.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\LearntAbout.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\OperationalArea.cs" />
     <Compile Include="Models\Organisation.cs" />
@@ -331,6 +345,11 @@
     <Content Include="Views\OperationalArea\Details.cshtml" />
     <Content Include="Views\OperationalArea\Edit.cshtml" />
     <Content Include="Views\OperationalArea\Index.cshtml" />
+    <Content Include="Views\LearntAbout\Create.cshtml" />
+    <Content Include="Views\LearntAbout\Delete.cshtml" />
+    <Content Include="Views\LearntAbout\Details.cshtml" />
+    <Content Include="Views\LearntAbout\Edit.cshtml" />
+    <Content Include="Views\LearntAbout\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -355,6 +374,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804031018531_AddedOperationalAreaTable.resx">
       <DependentUpon>201804031018531_AddedOperationalAreaTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804031227266_AddLearntAboutTable.resx">
+      <DependentUpon>201804031227266_AddLearntAboutTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
