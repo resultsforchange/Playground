@@ -1,32 +1,37 @@
-﻿using System.Linq;
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
+using System.Linq;
 using System.Net;
+using System.Web;
 using System.Web.Mvc;
 using Playground.Data;
 using Playground.Models;
 
 namespace Playground.Controllers
 {
-    public class CountryController : Controller
+    public class WomensRightsIssueController : Controller
     {
         private readonly GenericUnitOfWork _uow;
 
-        public CountryController()
+        public WomensRightsIssueController()
         {
             _uow = new GenericUnitOfWork();
         }
 
-        public CountryController(GenericUnitOfWork uow)
+        public WomensRightsIssueController(GenericUnitOfWork uow)
         {
             _uow = uow;
         }
 
-        // GET: GenericContacts
+        // GET: WomensRightsIssue
         public ActionResult Index()
         {
-            return View(_uow.Repository<Country>().GetAll().ToList());
+            return View(_uow.Repository<WomensRightsIssue>().GetAll().ToList());
         }
 
-        // GET: GenericContacts/Details/5
+        // GET: WomensRightsIssue/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -34,39 +39,43 @@ namespace Playground.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            Country country = _uow.Repository<Country>().Get(c => c.Id == id);
+            WomensRightsIssue womensRightsIssue = _uow.Repository<WomensRightsIssue>().Get(c => c.Id == id);
 
-            if (country == null)
+            if (womensRightsIssue == null)
             {
                 return HttpNotFound();
             }
-            return View(country);
+            return View(womensRightsIssue);
         }
 
-        // GET: GenericContacts/Create
+        // GET: WomensRightsIssue/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: GenericContacts/Create
+        // POST: WomensRightsIssue/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Description,InsertedBy,InsertedDateTime,ModifiedBy,ModifiedDateTime")] Country country)
+        public ActionResult Create(
+            [Bind(Include = "Id,Description,InsertedDateTime,InsertedBy,ModifiedDateTime,ModifiedBy")] WomensRightsIssue
+                womensRightsIssue)
         {
-            if (ModelState.IsValid)
             {
-                _uow.Repository<Country>().Add(country);
-                _uow.SaveChanges();
-                return RedirectToAction("Index");
-            }
+                if (ModelState.IsValid)
+                {
+                    _uow.Repository<WomensRightsIssue>().Add(womensRightsIssue);
+                    _uow.SaveChanges();
+                    return RedirectToAction("Index");
+                }
 
-            return View(country);
+                return View(womensRightsIssue);
+            }
         }
 
-        // GET: GenericContacts/Edit/5
+        // GET: WomensRightsIssue/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -74,32 +83,32 @@ namespace Playground.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            Country country = _uow.Repository<Country>().Get(c => c.Id == id);
+            WomensRightsIssue womensRightsIssue = _uow.Repository<WomensRightsIssue>().Get(c => c.Id == id);
 
-            if (country == null)
+            if (womensRightsIssue == null)
             {
                 return HttpNotFound();
             }
-            return View(country);
+            return View(womensRightsIssue);
         }
 
-        // POST: GenericContacts/Edit/5
+        // POST: WomensRightsIssue/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Description,InsertedBy,InsertedDateTime,ModifiedBy,ModifiedDateTime")] Country country)
+        public ActionResult Edit([Bind(Include = "Id,Description,InsertedDateTime,InsertedBy,ModifiedDateTime,ModifiedBy")] WomensRightsIssue womensRightsIssue)
         {
             if (ModelState.IsValid)
             {
-                _uow.Repository<Country>().Attach(country);
+                _uow.Repository<WomensRightsIssue>().Attach(womensRightsIssue);
                 _uow.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(country);
+            return View(womensRightsIssue);
         }
 
-        // GET: GenericContacts/Delete/5
+        // GET: WomensRightsIssue/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -107,22 +116,22 @@ namespace Playground.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            Country country = _uow.Repository<Country>().Get(c => c.Id == id);
+            WomensRightsIssue womensRightsIssue = _uow.Repository<WomensRightsIssue>().Get(c => c.Id == id);
 
-            if (country == null)
+            if (womensRightsIssue == null)
             {
                 return HttpNotFound();
             }
-            return View(country);
+            return View(womensRightsIssue);
         }
 
-        // POST: GenericContacts/Delete/5
+        // POST: WomensRightsIssue/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Country country = _uow.Repository<Country>().Get(c => c.Id == id);
-            _uow.Repository<Country>().Delete(country);
+            WomensRightsIssue womensRightsIssue = _uow.Repository<WomensRightsIssue>().Get(c => c.Id == id);
+            _uow.Repository<WomensRightsIssue>().Delete(womensRightsIssue);
             _uow.SaveChanges();
             return RedirectToAction("Index");
         }

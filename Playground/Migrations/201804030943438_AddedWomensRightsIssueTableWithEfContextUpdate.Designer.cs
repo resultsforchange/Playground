@@ -7,13 +7,13 @@ namespace Playground.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class RenameCountriesTable : IMigrationMetadata
+    public sealed partial class AddedWomensRightsIssueTableWithEfContextUpdate : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(RenameCountriesTable));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddedWomensRightsIssueTableWithEfContextUpdate));
         
         string IMigrationMetadata.Id
         {
-            get { return "201803281350310_RenameCountriesTable"; }
+            get { return "201804030943438_AddedWomensRightsIssueTableWithEfContextUpdate"; }
         }
         
         string IMigrationMetadata.Source

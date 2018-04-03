@@ -2,11 +2,11 @@
 
 namespace Playground.Models
 {
-    public class Country : AuditableEntity<int>
+    public class WomensRightsIssue : AuditableEntity<int>
     {
         [Required]
         [MaxLength(128)]
-        [Display(Name = "Country Name")]
+        [Display(Name = "Women's Rights Issue")]
         public string Description { get; set; }
     }
 }

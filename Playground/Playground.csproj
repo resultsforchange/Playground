@@ -64,6 +64,8 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Transactions">
       <HintPath>..\packages\RepositoryFramework.1.5\lib\net45\System.Transactions.dll</HintPath>
       <Private>True</Private>
@@ -184,46 +186,53 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\Country2Controller.cs" />
     <Compile Include="Controllers\CountryController.cs" />
-    <Compile Include="Controllers\CountryUowController.cs" />
-    <Compile Include="Controllers\GenericCountryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\OperationalAreaController.cs" />
     <Compile Include="Controllers\OrgDataController.cs" />
+    <Compile Include="Controllers\WomensRightsIssueController.cs" />
     <Compile Include="Data\EFContext.cs" />
     <Compile Include="Data\GenericUnitOfWork.cs" />
-    <Compile Include="Data\UnitOfWork.cs" />
+    <Compile Include="Experiment\OneToOne.cs" />
+    <Compile Include="Experiment\PassportDetails.cs" />
+    <Compile Include="Experiment\Person.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\IAuditableEntity.cs" />
+    <Compile Include="Interfaces\IEntity.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
-    <Compile Include="Migrations\201803281116108_Initial.cs" />
-    <Compile Include="Migrations\201803281116108_Initial.Designer.cs">
-      <DependentUpon>201803281116108_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201804030824173_InitialCreation.cs" />
+    <Compile Include="Migrations\201804030824173_InitialCreation.Designer.cs">
+      <DependentUpon>201804030824173_InitialCreation.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201803281350310_RenameCountriesTable.cs" />
-    <Compile Include="Migrations\201803281350310_RenameCountriesTable.Designer.cs">
-      <DependentUpon>201803281350310_RenameCountriesTable.cs</DependentUpon>
+    <Compile Include="Migrations\201804030930528_AddedWomensRightsIssueTable.cs" />
+    <Compile Include="Migrations\201804030930528_AddedWomensRightsIssueTable.Designer.cs">
+      <DependentUpon>201804030930528_AddedWomensRightsIssueTable.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201803290628427_ChangedDateTimeColumnsToSateTime2.cs" />
-    <Compile Include="Migrations\201803290628427_ChangedDateTimeColumnsToSateTime2.Designer.cs">
-      <DependentUpon>201803290628427_ChangedDateTimeColumnsToSateTime2.cs</DependentUpon>
+    <Compile Include="Migrations\201804030943438_AddedWomensRightsIssueTableWithEfContextUpdate.cs" />
+    <Compile Include="Migrations\201804030943438_AddedWomensRightsIssueTableWithEfContextUpdate.Designer.cs">
+      <DependentUpon>201804030943438_AddedWomensRightsIssueTableWithEfContextUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804031018531_AddedOperationalAreaTable.cs" />
+    <Compile Include="Migrations\201804031018531_AddedOperationalAreaTable.Designer.cs">
+      <DependentUpon>201804031018531_AddedOperationalAreaTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Administration.cs" />
-    <Compile Include="Models\BaseModel.cs" />
+    <Compile Include="Models\AuditableEntity.cs" />
     <Compile Include="Models\Country.cs" />
+    <Compile Include="Models\Entity.cs" />
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\LookupBaseModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\OperationalArea.cs" />
     <Compile Include="Models\Organisation.cs" />
     <Compile Include="Models\OrganisationData.cs" />
     <Compile Include="Models\Structure.cs" />
+    <Compile Include="Models\WomensRightsIssue.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\CountryRepository.cs" />
-    <Compile Include="Repositories\CountryRepositoryWithUow.cs" />
     <Compile Include="Repositories\GenericRepository.cs" />
     <Compile Include="Repository.cs" />
     <Compile Include="Startup.cs" />
@@ -312,6 +321,16 @@
     <Content Include="Views\OrgData\AdministrationData.cshtml" />
     <Content Include="Views\OrgData\StructureData.cshtml" />
     <Content Include="Views\OrgData\Success.cshtml" />
+    <Content Include="Views\WomensRightsIssue\Create.cshtml" />
+    <Content Include="Views\WomensRightsIssue\Delete.cshtml" />
+    <Content Include="Views\WomensRightsIssue\Details.cshtml" />
+    <Content Include="Views\WomensRightsIssue\Edit.cshtml" />
+    <Content Include="Views\WomensRightsIssue\Index.cshtml" />
+    <Content Include="Views\OperationalArea\Create.cshtml" />
+    <Content Include="Views\OperationalArea\Delete.cshtml" />
+    <Content Include="Views\OperationalArea\Details.cshtml" />
+    <Content Include="Views\OperationalArea\Edit.cshtml" />
+    <Content Include="Views\OperationalArea\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -325,14 +344,17 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201803281116108_Initial.resx">
-      <DependentUpon>201803281116108_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201804030824173_InitialCreation.resx">
+      <DependentUpon>201804030824173_InitialCreation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201803281350310_RenameCountriesTable.resx">
-      <DependentUpon>201803281350310_RenameCountriesTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201804030930528_AddedWomensRightsIssueTable.resx">
+      <DependentUpon>201804030930528_AddedWomensRightsIssueTable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201803290628427_ChangedDateTimeColumnsToSateTime2.resx">
-      <DependentUpon>201803290628427_ChangedDateTimeColumnsToSateTime2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201804030943438_AddedWomensRightsIssueTableWithEfContextUpdate.resx">
+      <DependentUpon>201804030943438_AddedWomensRightsIssueTableWithEfContextUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804031018531_AddedOperationalAreaTable.resx">
+      <DependentUpon>201804031018531_AddedOperationalAreaTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

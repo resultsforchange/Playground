@@ -36,7 +36,9 @@ namespace Playground.Repositories
 
         public void Attach(T entity)
         {
+            _context.Entry(entity).State = EntityState.Modified;
             _dbSet.Attach(entity);
+            
         }
 
         public void Delete(T entity)

@@ -7,13 +7,13 @@ namespace Playground.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class ChangedDateTimeColumnsToSateTime2 : IMigrationMetadata
+    public sealed partial class AddedOperationalAreaTable : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(ChangedDateTimeColumnsToSateTime2));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddedOperationalAreaTable));
         
         string IMigrationMetadata.Id
         {
-            get { return "201803290628427_ChangedDateTimeColumnsToSateTime2"; }
+            get { return "201804031018531_AddedOperationalAreaTable"; }
         }
         
         string IMigrationMetadata.Source
