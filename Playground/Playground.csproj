@@ -197,13 +197,11 @@
     <Compile Include="Data\GenericUnitOfWork.cs" />
     <Compile Include="Experiment\Administration.cs" />
     <Compile Include="Experiment\Country.cs" />
-    <Compile Include="Experiment\OneToOne.cs" />
+    <Compile Include="Experiment\LearntAbout.cs" />
     <Compile Include="Experiment\OperationalArea.cs" />
     <Compile Include="Experiment\OperationalLocation.cs" />
     <Compile Include="Experiment\Organisation.cs" />
     <Compile Include="Experiment\OrgDataWithLookups.cs" />
-    <Compile Include="Experiment\PassportDetails.cs" />
-    <Compile Include="Experiment\Person.cs" />
     <Compile Include="Experiment\Structure.cs" />
     <Compile Include="Experiment\WomensRightsIssue.cs" />
     <Compile Include="Global.asax.cs">
@@ -212,29 +210,9 @@
     <Compile Include="Interfaces\IAuditableEntity.cs" />
     <Compile Include="Interfaces\IEntity.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
-    <Compile Include="Migrations\201804030824173_InitialCreation.cs" />
-    <Compile Include="Migrations\201804030824173_InitialCreation.Designer.cs">
-      <DependentUpon>201804030824173_InitialCreation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201804030930528_AddedWomensRightsIssueTable.cs" />
-    <Compile Include="Migrations\201804030930528_AddedWomensRightsIssueTable.Designer.cs">
-      <DependentUpon>201804030930528_AddedWomensRightsIssueTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201804030943438_AddedWomensRightsIssueTableWithEfContextUpdate.cs" />
-    <Compile Include="Migrations\201804030943438_AddedWomensRightsIssueTableWithEfContextUpdate.Designer.cs">
-      <DependentUpon>201804030943438_AddedWomensRightsIssueTableWithEfContextUpdate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201804031018531_AddedOperationalAreaTable.cs" />
-    <Compile Include="Migrations\201804031018531_AddedOperationalAreaTable.Designer.cs">
-      <DependentUpon>201804031018531_AddedOperationalAreaTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201804031227266_AddLearntAboutTable.cs" />
-    <Compile Include="Migrations\201804031227266_AddLearntAboutTable.Designer.cs">
-      <DependentUpon>201804031227266_AddLearntAboutTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201804031253134_AddedAdditionalStructureColumns.cs" />
-    <Compile Include="Migrations\201804031253134_AddedAdditionalStructureColumns.Designer.cs">
-      <DependentUpon>201804031253134_AddedAdditionalStructureColumns.cs</DependentUpon>
+    <Compile Include="Migrations\201804041039071_Initial.cs" />
+    <Compile Include="Migrations\201804041039071_Initial.Designer.cs">
+      <DependentUpon>201804041039071_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -246,6 +224,7 @@
     <Compile Include="Models\LearntAbout.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\OperationalArea.cs" />
+    <Compile Include="Models\OperationalLocation.cs" />
     <Compile Include="Models\Organisation.cs" />
     <Compile Include="Models\OrganisationData.cs" />
     <Compile Include="Models\Structure.cs" />
@@ -367,23 +346,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201804030824173_InitialCreation.resx">
-      <DependentUpon>201804030824173_InitialCreation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804030930528_AddedWomensRightsIssueTable.resx">
-      <DependentUpon>201804030930528_AddedWomensRightsIssueTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804030943438_AddedWomensRightsIssueTableWithEfContextUpdate.resx">
-      <DependentUpon>201804030943438_AddedWomensRightsIssueTableWithEfContextUpdate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804031018531_AddedOperationalAreaTable.resx">
-      <DependentUpon>201804031018531_AddedOperationalAreaTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804031227266_AddLearntAboutTable.resx">
-      <DependentUpon>201804031227266_AddLearntAboutTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804031253134_AddedAdditionalStructureColumns.resx">
-      <DependentUpon>201804031253134_AddedAdditionalStructureColumns.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201804041039071_Initial.resx">
+      <DependentUpon>201804041039071_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

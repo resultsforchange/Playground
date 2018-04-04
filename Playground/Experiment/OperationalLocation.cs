@@ -9,7 +9,6 @@ namespace Playground.Experiment
     [Table("OperationalLocation")]
     public partial class OperationalLocation
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
 
         public long OrganisationId { get; set; }
@@ -21,6 +20,18 @@ namespace Playground.Experiment
         [Required]
         [StringLength(256)]
         public string Location { get; set; }
+
+        [Column(TypeName = "datetime2")]
+        public DateTime InsertedDateTime { get; set; }
+
+        [StringLength(256)]
+        public string InsertedBy { get; set; }
+
+        [Column(TypeName = "datetime2")]
+        public DateTime ModifiedDateTime { get; set; }
+
+        [StringLength(256)]
+        public string ModifiedBy { get; set; }
 
         public virtual Country Country { get; set; }
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Playground.Data;
@@ -13,11 +14,19 @@ namespace Playground.Controllers
         public OrgDataController()
         {
             _uow = new GenericUnitOfWork();
+            GetCountryList();
+            GetWomensRightsIssueList();
+            GetOperationalAreaList();
+            GetLearntAboutList();
         }
 
         public OrgDataController(GenericUnitOfWork uow)
         {
             _uow = uow;
+            GetCountryList();
+            GetWomensRightsIssueList();
+            GetOperationalAreaList();
+            GetLearntAboutList();
         }
 
         // GET: OrgData
@@ -228,6 +237,42 @@ namespace Playground.Controllers
         private void RemoveOrgData()
         {
             Session.Remove("orgData");
+        }
+
+        private void GetCountryList()
+        {
+            if (ViewData["countries"] == null)
+            {
+                var countryList = new SelectList(_uow.Repository<Country>().GetAll().ToList(), "ID", "Description");
+                ViewData["countries"] = countryList;
+            }
+        }
+
+        private void GetWomensRightsIssueList()
+        {
+            if (ViewData["womensRightsIssues"] == null)
+            {
+                var womensRightsIssueList = new SelectList(_uow.Repository<WomensRightsIssue>().GetAll().ToList(), "ID", "Description");
+                ViewData["womensRightsIssues"] = womensRightsIssueList;
+            }
+        }
+
+        private void GetOperationalAreaList()
+        {
+            if (ViewData["operationalAreas"] == null)
+            {
+                var operationalAreaList = new SelectList(_uow.Repository<OperationalArea>().GetAll().ToList(), "ID", "Description");
+                ViewData["operationalAreas"] = operationalAreaList;
+            }
+        }
+
+        private void GetLearntAboutList()
+        {
+            if (ViewData["learntAbout"] == null)
+            {
+                var learntAboutList = new SelectList(_uow.Repository<LearntAbout>().GetAll().ToList(), "ID", "Description");
+                ViewData["learntAbout"] = learntAboutList;
+            }
         }
     }
 }

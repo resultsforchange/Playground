@@ -28,35 +28,90 @@
 
                         @Html.LabelFor(m => m.HowAreKeyDecisionsMade)<br />
                         @Html.TextBoxFor(m => m.HowAreKeyDecisionsMade)
-                        @Html.ValidationMessageFor(m => m.HowAreKeyDecisionsMade)<br />
+                    @Html.ValidationMessageFor(m => m.HowAreKeyDecisionsMade)<br />
 
-                        @Html.LabelFor(m => m.WomensRoleOnBoard)<br />
-                        @Html.TextBoxFor(m => m.WomensRoleOnBoard)
-                        @Html.ValidationMessageFor(m => m.WomensRoleOnBoard)<br />
+                    @Html.LabelFor(m => m.WomensRoleOnBoard)<br />
+                                            @Html.TextBoxFor(m => m.WomensRoleOnBoard)
+                                            @Html.ValidationMessageFor(m => m.WomensRoleOnBoard)<br />
 
-                        @Html.LabelFor(m => m.PaidStaffId)<br />
-                        @Html.TextBoxFor(m => m.PaidStaffId)
-                        @Html.ValidationMessageFor(m => m.PaidStaffId)<br />
+                    <table>
+                        <thead>
+                        <th></th>
+                        <th>Total</th>
+                        <th>No. Female</th>
+                        <th>No. Male</th>
+                        <th>No. Transgender</th>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Paid Staff</td>
+                            <td>@Html.TextBoxFor(m => m.PaidStaffTotal)
+                            @Html.ValidationMessageFor(m => m.PaidStaffTotal)<br /></td>
+                            <td>@Html.TextBoxFor(m => m.PaidStaffFemales)
+                            @Html.ValidationMessageFor(m => m.PaidStaffFemales)<br /></td>
+                            <td>@Html.TextBoxFor(m => m.PaidStaffMales)
+                            @Html.ValidationMessageFor(m => m.PaidStaffMales)<br /></td>
+                            <td>@Html.TextBoxFor(m => m.PaidStaffTransNonConforming)
+                            @Html.ValidationMessageFor(m => m.PaidStaffTransNonConforming)<br /></td>
+                        </tr>
+                        <tr>
+                            <td>Unpaid Staff</td>
+                            <td>@Html.TextBoxFor(m => m.UnpaidStaffTotal)
+                            @Html.ValidationMessageFor(m => m.UnpaidStaffTotal)<br /></td>
+                            <td>@Html.TextBoxFor(m => m.UnpaidStaffFemales)
+                            @Html.ValidationMessageFor(m => m.UnpaidStaffFemales)<br /></td>
+                            <td>@Html.TextBoxFor(m => m.UnpaidStaffMales)
+                            @Html.ValidationMessageFor(m => m.UnpaidStaffMales)<br /></td>
+                            <td>@Html.TextBoxFor(m => m.UnpaidStaffTransNonConforming)
+                            @Html.ValidationMessageFor(m => m.UnpaidStaffTransNonConforming)<br /></td>
+                        </tr>
+                        <tr>
+                            <td>Board Members</td>
+                            <td>@Html.TextBoxFor(m => m.BoardMembersTotal)
+                            @Html.ValidationMessageFor(m => m.BoardMembersTotal)<br /></td>
+                            <td>@Html.TextBoxFor(m => m.BoardMembersFemales)
+                            @Html.ValidationMessageFor(m => m.BoardMembersFemales)<br /></td>
+                            <td>@Html.TextBoxFor(m => m.BoardMembersMales)
+                            @Html.ValidationMessageFor(m => m.BoardMembersMales)<br /></td>
+                            <td>@Html.TextBoxFor(m => m.BoardMembersTransNonConforming)
+                            @Html.ValidationMessageFor(m => m.BoardMembersTransNonConforming)<br /></td>
+                        </tr>
+                        <tr>
+                            <td>Advisors</td>
+                            <td>@Html.TextBoxFor(m => m.AdvisorsTotal)
+                            @Html.ValidationMessageFor(m => m.AdvisorsTotal)<br /></td>
+                            <td>@Html.TextBoxFor(m => m.AdvisorsFemales)
+                            @Html.ValidationMessageFor(m => m.AdvisorsFemales)<br /></td>
+                            <td>@Html.TextBoxFor(m => m.AdvisorsMales)
+                            @Html.ValidationMessageFor(m => m.AdvisorsMales)<br /></td>
+                            <td>@Html.TextBoxFor(m => m.AdvisorsTransNonConforming)
+                            @Html.ValidationMessageFor(m => m.AdvisorsTransNonConforming)<br /></td>
+                        </tr>
+                        <tr>
+                            <td>Volunteers</td>
+                            <td>@Html.TextBoxFor(m => m.VolunteersTotal)
+                            @Html.ValidationMessageFor(m => m.VolunteersTotal)<br /></td>
+                            <td>@Html.TextBoxFor(m => m.VolunteersFemales)
+                            @Html.ValidationMessageFor(m => m.VolunteersFemales)<br /></td>
+                            <td>@Html.TextBoxFor(m => m.VolunteersMales)
+                            @Html.ValidationMessageFor(m => m.VolunteersMales)<br /></td>
+                            <td>@Html.TextBoxFor(m => m.VolunteersTransNonConforming)
+                            @Html.ValidationMessageFor(m => m.VolunteersTransNonConforming)<br /></td>
+                        </tr>
+                        <tr>
+                            <td>Members</td>
+                            <td>@Html.TextBoxFor(m => m.MembersTotal)
+                            @Html.ValidationMessageFor(m => m.MembersTotal)<br /></td>
+                            <td>@Html.TextBoxFor(m => m.MembersFemales)
+                            @Html.ValidationMessageFor(m => m.MembersFemales)<br /></td>
+                            <td>@Html.TextBoxFor(m => m.MembersMales)
+                            @Html.ValidationMessageFor(m => m.MembersMales)<br /></td>
+                            <td>@Html.TextBoxFor(m => m.MembersTransNonConforming)
+                            @Html.ValidationMessageFor(m => m.MembersTransNonConforming)<br /></td>
+                        </tr>
+                        </tbody>
+                    </table>
 
-                        @Html.LabelFor(m => m.UnpaidStaffId)<br />
-                        @Html.TextBoxFor(m => m.UnpaidStaffId)
-                        @Html.ValidationMessageFor(m => m.UnpaidStaffId)<br />
-
-                        @Html.LabelFor(m => m.BoardId)<br />
-                        @Html.TextBoxFor(m => m.BoardId)
-                        @Html.ValidationMessageFor(m => m.BoardId)<br />
-
-                        @Html.LabelFor(m => m.AdvisorId)<br />
-                        @Html.TextBoxFor(m => m.AdvisorId)
-                        @Html.ValidationMessageFor(m => m.AdvisorId)<br />
-
-                        @Html.LabelFor(m => m.VolunteerId)<br />
-                        @Html.TextBoxFor(m => m.VolunteerId)
-                        @Html.ValidationMessageFor(m => m.VolunteerId)<br />
-
-                        @Html.LabelFor(m => m.MemberId)<br />
-                        @Html.TextBoxFor(m => m.MemberId)
-                        @Html.ValidationMessageFor(m => m.MemberId)<br />
 
                         @*@Html.LabelFor(m => m.RegistrationCertificate)<br />
                         @Html.TextBoxFor(m => m.RegistrationCertificate)

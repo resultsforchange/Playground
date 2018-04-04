@@ -98,6 +98,8 @@ namespace Playground.Experiment
         [StringLength(256)]
         public string ModifiedBy { get; set; }
 
+        public virtual LearntAbout LearntAbout { get; set; }
+
         public virtual Country Country { get; set; }
 
         public virtual Country Country1 { get; set; }

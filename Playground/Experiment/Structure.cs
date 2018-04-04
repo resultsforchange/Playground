@@ -27,18 +27,6 @@ namespace Playground.Experiment
         [Required]
         public string WomensRoleOnBoard { get; set; }
 
-        public int PaidStaffId { get; set; }
-
-        public int UnpaidStaffId { get; set; }
-
-        public int BoardId { get; set; }
-
-        public int AdvisorId { get; set; }
-
-        public int VolunteerId { get; set; }
-
-        public int MemberId { get; set; }
-
         public byte[] RegistrationCertificate { get; set; }
 
         public byte[] ReferenceLetter { get; set; }
@@ -54,6 +42,54 @@ namespace Playground.Experiment
 
         [StringLength(256)]
         public string ModifiedBy { get; set; }
+
+        public int? PaidStaffTotal { get; set; }
+
+        public int? PaidStaffFemales { get; set; }
+
+        public int? PaidStaffMales { get; set; }
+
+        public int? PaidStaffTransNonConforming { get; set; }
+
+        public int? UnpaidStaffTotal { get; set; }
+
+        public int? UnpaidStaffFemales { get; set; }
+
+        public int? UnpaidStaffMales { get; set; }
+
+        public int? UnpaidStaffTransNonConforming { get; set; }
+
+        public int? BoardMembersTotal { get; set; }
+
+        public int? BoardMembersFemales { get; set; }
+
+        public int? BoardMembersMales { get; set; }
+
+        public int? BoardMembersTransNonConforming { get; set; }
+
+        public int? AdvisorsTotal { get; set; }
+
+        public int? AdvisorsFemales { get; set; }
+
+        public int? AdvisorsMales { get; set; }
+
+        public int? AdvisorsTransNonConforming { get; set; }
+
+        public int? VolunteersTotal { get; set; }
+
+        public int? VolunteersFemales { get; set; }
+
+        public int? VolunteersMales { get; set; }
+
+        public int? VolunteersTransNonConforming { get; set; }
+
+        public int? MembersTotal { get; set; }
+
+        public int? MembersFemales { get; set; }
+
+        public int? MembersMales { get; set; }
+
+        public int? MembersTransNonConforming { get; set; }
 
         public virtual Organisation Organisation { get; set; }
     }

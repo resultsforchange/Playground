@@ -31,8 +31,12 @@
                     @Html.TextBoxFor(m => m.PhysicalCity)
                     @Html.ValidationMessageFor(m => m.PhysicalCity)<br />
 
-                    @Html.LabelFor(m => m.PhysicalCountry)<br />
+                    @*@Html.LabelFor(m => m.PhysicalCountry)<br />
                     @Html.TextBoxFor(m => m.PhysicalCountry)
+                    @Html.ValidationMessageFor(m => m.PhysicalCountry)<br />*@
+
+                    @Html.LabelFor(m => m.PhysicalCountry)<br />
+                    @Html.DropDownListFor(m => m.PhysicalCountry, (IEnumerable<SelectListItem>)ViewData["countries"])
                     @Html.ValidationMessageFor(m => m.PhysicalCountry)<br />
 
                     @Html.LabelFor(m => m.PhysicalCode)<br />
@@ -51,8 +55,12 @@
                     @Html.TextBoxFor(m => m.PostalCity)
                     @Html.ValidationMessageFor(m => m.PostalCity)<br />
 
-                    @Html.LabelFor(m => m.PostalCountry)<br />
+                    @*@Html.LabelFor(m => m.PostalCountry)<br />
                     @Html.TextBoxFor(m => m.PostalCountry)
+                    @Html.ValidationMessageFor(m => m.PostalCountry)<br />*@
+
+                    @Html.LabelFor(m => m.PostalCountry)<br />
+                    @Html.DropDownListFor(m => m.PostalCountry, (IEnumerable<SelectListItem>)ViewData["countries"])
                     @Html.ValidationMessageFor(m => m.PostalCountry)<br />
 
                     @Html.LabelFor(m => m.PostalCode)<br />
@@ -107,9 +115,13 @@
                     @Html.TextBoxFor(m => m.ContactSkypeAddress)
                     @Html.ValidationMessageFor(m => m.ContactSkypeAddress)<br />
 
-                    @Html.LabelFor(m => m.LearntAboutId)<br />
+                    @*@Html.LabelFor(m => m.LearntAboutId)<br />
                     @Html.TextBoxFor(m => m.LearntAboutId)
-                    @Html.ValidationMessageFor(m => m.LearntAboutId)<br />
+                    @Html.ValidationMessageFor(m => m.LearntAboutId)<br />*@
+
+                    @Html.LabelFor(m => m.LearntAboutId)<br />
+                                        @Html.DropDownListFor(m => m.LearntAboutId, (IEnumerable<SelectListItem>)ViewData["learntAbout"])
+                                        @Html.ValidationMessageFor(m => m.LearntAboutId)<br />
 
                     @Html.LabelFor(m => m.ReceivedPreviousGrant)<br />
                     @Html.CheckBoxFor(m => m.ReceivedPreviousGrant)

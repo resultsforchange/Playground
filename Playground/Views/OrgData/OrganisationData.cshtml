@@ -23,8 +23,12 @@
                     @Html.TextBoxFor(m => m.Mission)
                     @Html.ValidationMessageFor(m => m.Mission)<br />
 
-                    @Html.LabelFor(m => m.WomensRightsIssuesId)<br />
+                    @*@Html.LabelFor(m => m.WomensRightsIssuesId)<br />
                     @Html.TextBoxFor(m => m.WomensRightsIssuesId)
+                    @Html.ValidationMessageFor(m => m.WomensRightsIssuesId)<br />*@
+
+                    @Html.LabelFor(m => m.WomensRightsIssuesId)<br />
+                    @Html.DropDownListFor(m => m.WomensRightsIssuesId,(IEnumerable<SelectListItem>)ViewData["womensRightsIssues"])
                     @Html.ValidationMessageFor(m => m.WomensRightsIssuesId)<br />
 
                     @Html.LabelFor(m => m.YearFormed)<br />
@@ -39,8 +43,12 @@
                     @Html.TextBoxFor(m => m.ReasonFormed)
                     @Html.ValidationMessageFor(m => m.ReasonFormed)<br />
 
-                    @Html.LabelFor(m => m.OperationalAreaId)<br />
+                    @*@Html.LabelFor(m => m.OperationalAreaId)<br />
                     @Html.TextBoxFor(m => m.OperationalAreaId)
+                    @Html.ValidationMessageFor(m => m.OperationalAreaId)<br />*@
+
+                    @Html.LabelFor(m => m.OperationalAreaId)<br />
+                    @Html.DropDownListFor(m => m.OperationalAreaId, (IEnumerable<SelectListItem>)ViewData["operationalAreas"])
                     @Html.ValidationMessageFor(m => m.OperationalAreaId)<br />
 
                     @Html.LabelFor(m => m.OperationalLocationId)<br />

@@ -21,9 +21,51 @@ namespace Playground.Data
             return base.Set<TEntity>();
         }
 
+        public virtual DbSet<Country> Country { get; set; }
+        public virtual DbSet<WomensRightsIssue> WomensRightsIssue { get; set; }
+        public virtual DbSet<OperationalArea> OperationalArea { get; set; }
+        public virtual DbSet<OperationalLocation> OperationalLocation { get; set; }
+        public virtual DbSet<LearntAbout> LearntAbout { get; set; }
+        public virtual DbSet<Organisation> Organisation { get; set; }
+        public virtual DbSet<Administration> Administration { get; set; }
+        public virtual DbSet<Structure> Structure { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+
+            modelBuilder.Entity<Country>()
+                .HasMany(e => e.AdministrationPhysical)
+                .WithRequired(e => e.PhysicalCountryId)
+                .HasForeignKey(e => e.PhysicalCountry);
+
+            modelBuilder.Entity<Country>()
+                .HasMany(e => e.AdministrationPostal)
+                .WithRequired(e => e.PostalCountryId)
+                .HasForeignKey(e => e.PostalCountry);
+
+            modelBuilder.Entity<Country>()
+                .HasMany(e => e.OperationalLocations)
+                .WithRequired(e => e.Country)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<LearntAbout>()
+                .HasMany(e => e.Administration)
+                .WithRequired(e => e.LearntAbout)
+                //.HasForeignKey(e => e.LearntAboutId)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<OperationalArea>()
+                .HasMany(e => e.OperationalLocations)
+                .WithRequired(e => e.OperationalArea)
+                //.HasForeignKey(e => e.OperationalAreaId)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<OperationalArea>()
+                .HasMany(e => e.Organisations)
+                .WithRequired(e => e.OperationalArea)
+                //.HasForeignKey(e => e.OperationalAreaId)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Organisation>()
                 .HasMany(e => e.Administration)
@@ -35,6 +77,18 @@ namespace Playground.Data
                 .WithOptional(e => e.Organisation)
                 .HasForeignKey(e => e.OrganisationId);
 
+            modelBuilder.Entity<Organisation>()
+                .HasMany(e => e.OperationalLocations)
+                .WithRequired(e => e.Organisation)
+                //.HasForeignKey(e => e.OrganisationId)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<WomensRightsIssue>()
+                .HasMany(e => e.Organisations)
+                .WithRequired(e => e.WomensRightsIssue)
+                .HasForeignKey(e => e.WomensRightsIssuesId)
+                .WillCascadeOnDelete(false);
+
             modelBuilder.Entity<Administration>();
             modelBuilder.Entity<Administration>()
                 .Property(p => p.OrganisationId).IsOptional();
@@ -43,24 +97,8 @@ namespace Playground.Data
             modelBuilder.Entity<Structure>()
                 .Property(p => p.OrganisationId).IsOptional();
 
-            modelBuilder.Entity<Country>();
-
-            modelBuilder.Entity<WomensRightsIssue>();
-
-            modelBuilder.Entity<OperationalArea>();
-
-            modelBuilder.Entity<LearntAbout>();
-
             base.OnModelCreating(modelBuilder);
         }
-
-        public virtual DbSet<Country> Country { get; set; }
-        public virtual DbSet<WomensRightsIssue> WomensRightsIssue { get; set; }
-        public virtual DbSet<OperationalArea> OperationalArea { get; set; }
-        public virtual DbSet<LearntAbout> LearntAbout { get; set; }
-        public virtual DbSet<Organisation> Organisation { get; set; }
-        public virtual DbSet<Administration> Administration { get; set; }
-        public virtual DbSet<Structure> Structure { get; set; }
 
         /// <summary>
         ///  Set audit column values by overriding SaveChanges method

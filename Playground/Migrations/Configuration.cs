@@ -1,9 +1,8 @@
-using Playground.Models;
-
 namespace Playground.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;
+    using Models;
 
     internal sealed class Configuration : DbMigrationsConfiguration<Data.EfContext>
     {
@@ -20,7 +19,7 @@ namespace Playground.Migrations
             //  to avoid creating duplicate seed data. 
 
             context.Country.AddOrUpdate(
-                new Country() { Description = "Algeria", InsertedBy = "Administrator", InsertedDateTime = DateTime.Now, ModifiedBy = "Administrator", ModifiedDateTime = DateTime.Now},
+                new Country() { Description = "Algeria", InsertedBy = "Administrator", InsertedDateTime = DateTime.Now, ModifiedBy = "Administrator", ModifiedDateTime = DateTime.Now },
                 new Country() { Description = "Angola", InsertedBy = "Administrator", InsertedDateTime = DateTime.Now, ModifiedBy = "Administrator", ModifiedDateTime = DateTime.Now },
                 new Country() { Description = "Benin", InsertedBy = "Administrator", InsertedDateTime = DateTime.Now, ModifiedBy = "Administrator", ModifiedDateTime = DateTime.Now },
                 new Country() { Description = "Botswana", InsertedBy = "Administrator", InsertedDateTime = DateTime.Now, ModifiedBy = "Administrator", ModifiedDateTime = DateTime.Now },

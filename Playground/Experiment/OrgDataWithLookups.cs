@@ -14,6 +14,7 @@ namespace Playground.Experiment
 
         public virtual DbSet<Administration> Administration { get; set; }
         public virtual DbSet<Country> Country { get; set; }
+        public virtual DbSet<LearntAbout> LearntAbout { get; set; }
         public virtual DbSet<OperationalArea> OperationalArea { get; set; }
         public virtual DbSet<OperationalLocation> OperationalLocation { get; set; }
         public virtual DbSet<Organisation> Organisation { get; set; }
@@ -39,6 +40,11 @@ namespace Playground.Experiment
                 .WithRequired(e => e.Country)
                 .WillCascadeOnDelete(false);
 
+            modelBuilder.Entity<LearntAbout>()
+                .HasMany(e => e.Administration)
+                .WithRequired(e => e.LearntAbout)
+                .WillCascadeOnDelete(false);
+
             modelBuilder.Entity<OperationalArea>()
                 .HasMany(e => e.OperationalLocation)
                 .WithRequired(e => e.OperationalArea)
@@ -51,6 +57,14 @@ namespace Playground.Experiment
 
             modelBuilder.Entity<OperationalLocation>()
                 .Property(e => e.Location)
+                .IsFixedLength();
+
+            modelBuilder.Entity<OperationalLocation>()
+                .Property(e => e.InsertedBy)
+                .IsFixedLength();
+
+            modelBuilder.Entity<OperationalLocation>()
+                .Property(e => e.ModifiedBy)
                 .IsFixedLength();
 
             modelBuilder.Entity<Organisation>()

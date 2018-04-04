@@ -115,5 +115,8 @@ namespace Playground.Models
         public int PreviousGrantInformationId { get; set; }
 
         public virtual Organisation Organisation { get; set; }
+        public virtual LearntAbout LearntAbout { get; set; }
+        public virtual Country PhysicalCountryId { get; set; }
+        public virtual Country PostalCountryId { get; set; }
     }
 }

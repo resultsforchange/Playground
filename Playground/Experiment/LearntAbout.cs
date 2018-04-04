@@ -6,14 +6,13 @@ namespace Playground.Experiment
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("OperationalArea")]
-    public partial class OperationalArea
+    [Table("LearntAbout")]
+    public partial class LearntAbout
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public OperationalArea()
+        public LearntAbout()
         {
-            OperationalLocation = new HashSet<OperationalLocation>();
-            Organisation = new HashSet<Organisation>();
+            Administration = new HashSet<Administration>();
         }
 
         public int Id { get; set; }
@@ -34,12 +33,7 @@ namespace Playground.Experiment
         [StringLength(256)]
         public string ModifiedBy { get; set; }
 
-        public long? Organisation_Id { get; set; }
-
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<OperationalLocation> OperationalLocation { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Organisation> Organisation { get; set; }
+        public virtual ICollection<Administration> Administration { get; set; }
     }
 }
