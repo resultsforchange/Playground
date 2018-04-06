@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Playground.Models
@@ -6,6 +7,11 @@ namespace Playground.Models
     [Table("Structure")]
     public class Structure : AuditableEntity<long>
     {
+        public Structure()
+        {
+            Files = new HashSet<File>();
+        }
+
         //[ScaffoldColumn(false)]
         public long OrganisationId { get; set; }
 
@@ -106,6 +112,7 @@ namespace Playground.Models
 
         //[Required]
         [Display(Name = "Please upload your organisation's reqistration certificate")]
+        //public byte[] RegistrationCertificate { get; set; }
         public byte[] RegistrationCertificate { get; set; }
 
         //[Required]
@@ -113,5 +120,6 @@ namespace Playground.Models
         public byte[] ReferenceLetter { get; set; }
 
         public virtual Organisation Organisation { get; set; }
+        public virtual ICollection<File> Files { get; set; }
     }
 }

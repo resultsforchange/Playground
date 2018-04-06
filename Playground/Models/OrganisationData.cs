@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace Playground.Models
 {
@@ -17,5 +18,6 @@ namespace Playground.Models
         public Organisation OrgData { get; set; }
         public Administration AdminData { get; set; }
         public Structure StructData { get; set; }
+        public HttpPostedFileBase File { get; set; }
     }
 }

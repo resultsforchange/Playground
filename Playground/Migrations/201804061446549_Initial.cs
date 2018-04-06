@@ -187,6 +187,25 @@ namespace Playground.Migrations
                 .Index(t => t.OrganisationId);
             
             CreateTable(
+                "dbo.File",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        FileName = c.String(maxLength: 255),
+                        ContentType = c.String(maxLength: 100),
+                        Content = c.Binary(),
+                        FileType = c.Int(nullable: false),
+                        StructureId = c.Long(nullable: false),
+                        InsertedDateTime = c.DateTime(nullable: false, precision: 7, storeType: "datetime2"),
+                        InsertedBy = c.String(maxLength: 256),
+                        ModifiedDateTime = c.DateTime(nullable: false, precision: 7, storeType: "datetime2"),
+                        ModifiedBy = c.String(maxLength: 256),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Structure", t => t.StructureId)
+                .Index(t => t.StructureId);
+            
+            CreateTable(
                 "dbo.WomensRightsIssue",
                 c => new
                     {
@@ -199,12 +218,32 @@ namespace Playground.Migrations
                     })
                 .PrimaryKey(t => t.Id);
             
+            CreateTable(
+                "dbo.PreviousGrantsInformation",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        AdministrationId = c.Long(nullable: false),
+                        ProjectName = c.String(nullable: false, maxLength: 256),
+                        GrantId = c.String(nullable: false, maxLength: 16),
+                        KeyOutcomes = c.String(nullable: false),
+                        InsertedDateTime = c.DateTime(nullable: false, precision: 7, storeType: "datetime2"),
+                        InsertedBy = c.String(maxLength: 256),
+                        ModifiedDateTime = c.DateTime(nullable: false, precision: 7, storeType: "datetime2"),
+                        ModifiedBy = c.String(maxLength: 256),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Administration", t => t.AdministrationId)
+                .Index(t => t.AdministrationId);
+            
         }
         
         public override void Down()
         {
+            DropForeignKey("dbo.PreviousGrantsInformation", "AdministrationId", "dbo.Administration");
             DropForeignKey("dbo.Organisation", "WomensRightsIssuesId", "dbo.WomensRightsIssue");
             DropForeignKey("dbo.Structure", "OrganisationId", "dbo.Organisation");
+            DropForeignKey("dbo.File", "StructureId", "dbo.Structure");
             DropForeignKey("dbo.OperationalLocation", "OrganisationId", "dbo.Organisation");
             DropForeignKey("dbo.Organisation", "OperationalAreaId", "dbo.OperationalArea");
             DropForeignKey("dbo.OperationalLocation", "OperationalAreaId", "dbo.OperationalArea");
@@ -213,6 +252,8 @@ namespace Playground.Migrations
             DropForeignKey("dbo.Administration", "PhysicalCountry", "dbo.Country");
             DropForeignKey("dbo.Administration", "OrganisationId", "dbo.Organisation");
             DropForeignKey("dbo.Administration", "LearntAboutId", "dbo.LearntAbout");
+            DropIndex("dbo.PreviousGrantsInformation", new[] { "AdministrationId" });
+            DropIndex("dbo.File", new[] { "StructureId" });
             DropIndex("dbo.Structure", new[] { "OrganisationId" });
             DropIndex("dbo.OperationalLocation", new[] { "CountryId" });
             DropIndex("dbo.OperationalLocation", new[] { "OperationalAreaId" });
@@ -223,7 +264,9 @@ namespace Playground.Migrations
             DropIndex("dbo.Administration", new[] { "PostalCountry" });
             DropIndex("dbo.Administration", new[] { "PhysicalCountry" });
             DropIndex("dbo.Administration", new[] { "OrganisationId" });
+            DropTable("dbo.PreviousGrantsInformation");
             DropTable("dbo.WomensRightsIssue");
+            DropTable("dbo.File");
             DropTable("dbo.Structure");
             DropTable("dbo.Country");
             DropTable("dbo.OperationalLocation");

@@ -1,4 +1,6 @@
-﻿@model Playground.Models.Organisation
+﻿@using Newtonsoft.Json
+@using Playground.Models
+@model Playground.Models.Organisation
 
 @{
     ViewBag.Title = "Organisation Details";
@@ -23,10 +25,6 @@
                     @Html.TextBoxFor(m => m.Mission)
                     @Html.ValidationMessageFor(m => m.Mission)<br />
 
-                    @*@Html.LabelFor(m => m.WomensRightsIssuesId)<br />
-                    @Html.TextBoxFor(m => m.WomensRightsIssuesId)
-                    @Html.ValidationMessageFor(m => m.WomensRightsIssuesId)<br />*@
-
                     @Html.LabelFor(m => m.WomensRightsIssuesId)<br />
                     @Html.DropDownListFor(m => m.WomensRightsIssuesId,(IEnumerable<SelectListItem>)ViewData["womensRightsIssues"])
                     @Html.ValidationMessageFor(m => m.WomensRightsIssuesId)<br />
@@ -43,10 +41,6 @@
                     @Html.TextBoxFor(m => m.ReasonFormed)
                     @Html.ValidationMessageFor(m => m.ReasonFormed)<br />
 
-                    @*@Html.LabelFor(m => m.OperationalAreaId)<br />
-                    @Html.TextBoxFor(m => m.OperationalAreaId)
-                    @Html.ValidationMessageFor(m => m.OperationalAreaId)<br />*@
-
                     @Html.LabelFor(m => m.OperationalAreaId)<br />
                     @Html.DropDownListFor(m => m.OperationalAreaId, (IEnumerable<SelectListItem>)ViewData["operationalAreas"])
                     @Html.ValidationMessageFor(m => m.OperationalAreaId)<br />
@@ -55,16 +49,52 @@
                     @Html.TextBoxFor(m => m.OperationalLocationId)
                     @Html.ValidationMessageFor(m => m.OperationalLocationId)<br />
 
+                    string opLocationsJson = JsonConvert.SerializeObject(new List<OperationalLocation>());
+                    @Html.Hidden("opLocations", opLocationsJson)
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="area" placeholder="Organisational Area">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="country" placeholder="Organisational Country">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="location" placeholder="Organisational Location">
+                    </div>
+                    <div class="form-group">
+                        <a class="btn btn-default add-row" id="add" href="#" role="button" onclick="AddOpLocationRow()">Add Row</a>
+                    </div>
+                    <table class="table table-striped table-bordered table-hover table-condensed" id="opLocationInfo">
+                        <thead>
+                        <tr>
+                            <th>Area</th>
+                            <th>Country</th>
+                            <th>Location</th>
+                        </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                    <a class="btn btn-danger delete-row" id="remove" href="#" role="button" onclick="RemoveOpLocationRow()">Delete Row</a>
+
                     @Html.LabelFor(m => m.Achievements)<br />
                     @Html.TextBoxFor(m => m.Achievements)
                     @Html.ValidationMessageFor(m => m.Achievements)<br />
 
                     <br />
                     <hr />
-                    <input type="submit" name="nextBtn" value='Next' />
+                    <input type="submit" name="nextBtn" id="nextBtn" value='Next' />
                 }
                 <!-- page content ends here -->
             </div>
         </div><!-- /.row -->
     </div><!-- /.container -->
 </section>
+
+@section scripts
+{
+   <script type="text/javascript">
+    (function ($) {
+
+    });
+    </script>     
+}

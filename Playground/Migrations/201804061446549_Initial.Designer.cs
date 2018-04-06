@@ -13,7 +13,7 @@ namespace Playground.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201804041039071_Initial"; }
+            get { return "201804061446549_Initial"; }
         }
         
         string IMigrationMetadata.Source

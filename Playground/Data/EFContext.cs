@@ -26,9 +26,11 @@ namespace Playground.Data
         public virtual DbSet<OperationalArea> OperationalArea { get; set; }
         public virtual DbSet<OperationalLocation> OperationalLocation { get; set; }
         public virtual DbSet<LearntAbout> LearntAbout { get; set; }
+        public virtual DbSet<PreviousGrantsInformation> PreviousGrantsInformation { get; set; }
         public virtual DbSet<Organisation> Organisation { get; set; }
-        public virtual DbSet<Administration> Administration { get; set; }
+        public virtual DbSet<Administration> Administration { get; set; }   
         public virtual DbSet<Structure> Structure { get; set; }
+        public virtual DbSet<File> File { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -93,9 +95,19 @@ namespace Playground.Data
             modelBuilder.Entity<Administration>()
                 .Property(p => p.OrganisationId).IsOptional();
 
+            modelBuilder.Entity<Administration>()
+                .HasMany(e => e.PreviousGrants)
+                .WithRequired(e => e.Administration)
+                .WillCascadeOnDelete(false);
+
             modelBuilder.Entity<Structure>();
             modelBuilder.Entity<Structure>()
                 .Property(p => p.OrganisationId).IsOptional();
+
+            modelBuilder.Entity<Structure>()
+                .HasMany(e => e.Files)
+                .WithRequired(e => e.Structure)
+                .WillCascadeOnDelete(false);
 
             base.OnModelCreating(modelBuilder);
         }

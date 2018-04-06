@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Playground.Models
@@ -6,6 +7,11 @@ namespace Playground.Models
     [Table("Administration")]
     public class Administration : AuditableEntity<long>
     {
+        public Administration()
+        {
+            PreviousGrants = new HashSet<PreviousGrantsInformation>();
+        }
+
         //[ScaffoldColumn(false)]
         [Required]
         public long OrganisationId { get; set; }
@@ -118,5 +124,6 @@ namespace Playground.Models
         public virtual LearntAbout LearntAbout { get; set; }
         public virtual Country PhysicalCountryId { get; set; }
         public virtual Country PostalCountryId { get; set; }
+        public virtual ICollection<PreviousGrantsInformation> PreviousGrants { get; set; }
     }
 }

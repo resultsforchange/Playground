@@ -187,32 +187,25 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CountryController.cs" />
+    <Compile Include="Controllers\DynamicControlController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LearntAboutController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\OperationalAreaController.cs" />
     <Compile Include="Controllers\OrgDataController.cs" />
+    <Compile Include="Controllers\UploadController.cs" />
     <Compile Include="Controllers\WomensRightsIssueController.cs" />
     <Compile Include="Data\EFContext.cs" />
     <Compile Include="Data\GenericUnitOfWork.cs" />
-    <Compile Include="Experiment\Administration.cs" />
-    <Compile Include="Experiment\Country.cs" />
-    <Compile Include="Experiment\LearntAbout.cs" />
-    <Compile Include="Experiment\OperationalArea.cs" />
-    <Compile Include="Experiment\OperationalLocation.cs" />
-    <Compile Include="Experiment\Organisation.cs" />
-    <Compile Include="Experiment\OrgDataWithLookups.cs" />
-    <Compile Include="Experiment\Structure.cs" />
-    <Compile Include="Experiment\WomensRightsIssue.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\IAuditableEntity.cs" />
     <Compile Include="Interfaces\IEntity.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
-    <Compile Include="Migrations\201804041039071_Initial.cs" />
-    <Compile Include="Migrations\201804041039071_Initial.Designer.cs">
-      <DependentUpon>201804041039071_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201804061446549_Initial.cs" />
+    <Compile Include="Migrations\201804061446549_Initial.Designer.cs">
+      <DependentUpon>201804061446549_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -220,6 +213,8 @@
     <Compile Include="Models\AuditableEntity.cs" />
     <Compile Include="Models\Country.cs" />
     <Compile Include="Models\Entity.cs" />
+    <Compile Include="Models\File.cs" />
+    <Compile Include="Models\FileType.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\LearntAbout.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -227,6 +222,7 @@
     <Compile Include="Models\OperationalLocation.cs" />
     <Compile Include="Models\Organisation.cs" />
     <Compile Include="Models\OrganisationData.cs" />
+    <Compile Include="Models\PreviousGrantsInformation.cs" />
     <Compile Include="Models\Structure.cs" />
     <Compile Include="Models\WomensRightsIssue.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -333,9 +329,13 @@
     <Content Include="Views\LearntAbout\Details.cshtml" />
     <Content Include="Views\LearntAbout\Edit.cshtml" />
     <Content Include="Views\LearntAbout\Index.cshtml" />
+    <Content Include="Views\DynamicControl\Index.cshtml" />
+    <Content Include="Views\Upload\UploadFile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Experiment\" />
+    <Folder Include="UploadedFiles\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -346,8 +346,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201804041039071_Initial.resx">
-      <DependentUpon>201804041039071_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201804061446549_Initial.resx">
+      <DependentUpon>201804061446549_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
